@@ -19,9 +19,11 @@
     "react-icons": "^4.11.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.2.0",
     "autoprefixer": "latest",
-    "eslint": "latest",
+    "eslint": "^8.57.0",
     "eslint-config-next": "latest",
+    "globals": "^15.1.0",
     "postcss": "latest",
     "sass": "^1.69.5",
     "tailwindcss": "latest"

@@ -1,10 +1,9 @@
 export const userData = {
   githubUser: 'BrunoFelipeAlbuquerque',
-  devUsername: "BrunoFelipeAlbuquerque",
+  stackOverflowUser: "3323543",
   github: 'https://github.com/BrunoFelipeAlbuquerque',
-  facebook: 'https://www.facebook.com/brunorodriguesalbuquerque/',
   linkedIn: 'https://www.linkedin.com/in/brunofelipealbuquerque/',
-  twitter: 'https://twitter.com/BrunoFelip52739',
+  twitter: 'https://twitter.com/BrunoTheDev',
   stackOverflow: 'https://stackoverflow.com/users/3323543/bruno-albuquerque',
   leetcode: "https://leetcode.com/u/BrunoFelipeAlbuquerque/",
   resume: "https://drive.google.com/file/d/13lrH1Iuxijna21edodZWUmfPb51sa5T6/view?usp=sharing",

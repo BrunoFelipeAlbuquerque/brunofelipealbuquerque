@@ -1,10 +1,11 @@
 // @flow strict
 
 import { userData } from "@/data/user-data";
+import GlowCard from "../helper/glow-card";
 import Image from "next/image";
 import Link from "next/link";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { FaFacebook, FaTwitterSquare } from "react-icons/fa";
+import { BsStackOverflow, BsGithub, BsLinkedin } from "react-icons/bs";
+import { FaTwitterSquare } from "react-icons/fa";
 import { MdDownload } from "react-icons/md";
 import { SiLeetcode } from "react-icons/si";
 
@@ -43,13 +44,6 @@ function HeroSection({ profile }) {
               <BsLinkedin size={24} />
             </Link>
             <Link
-              href={userData.facebook}
-              target='_blank'
-              className="transition-all text-teal-500 hover:scale-125 duration-300"
-            >
-              <FaFacebook size={24} />
-            </Link>
-            <Link
               href={userData.leetcode}
               target='_blank'
               className="transition-all text-teal-500 hover:scale-125 duration-300"
@@ -63,6 +57,13 @@ function HeroSection({ profile }) {
             >
               <FaTwitterSquare size={24} />
             </Link>
+            <Link
+              href={userData.stackOverflow}
+              target='_blank'
+              className="transition-all text-teal-500 hover:scale-125 duration-300"
+            >
+              <BsStackOverflow size={24} />
+            </Link>
           </div>
 
           <div className="w-full justify-center flex items-center gap-3 mt-6">
@@ -75,20 +76,8 @@ function HeroSection({ profile }) {
           </div>
 
         </div>
-
-        <div className="h-full from-[#0d1224] border-[#1b2c68a0] relative rounded-lg border bg-gradient-to-r to-[#0a0d37]">
-          <div className="flex flex-row">
-            <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
-            <div className="h-[1px] w-full bg-gradient-to-r from-violet-600 to-transparent"></div>
-          </div>
-          <div className="px-4 lg:px-8 py-5">
-            <div className="flex flex-row space-x-2">
-              <div className="h-3 w-3 rounded-full bg-red-500"></div>
-              <div className="h-3 w-3 rounded-full bg-orange-400"></div>
-              <div className="h-3 w-3 rounded-full bg-green-400"></div>
-            </div>
-          </div>
-          <div className="overflow-hidden border-t-[2px] border-indigo-900 px-4 lg:px-8 py-4 lg:py-8">
+        <GlowCard identifier="profile-skills">
+          <div className="px-4 lg:px-8 py-4 lg:py-8">
             <code className="font-mono text-xs md:text-sm lg:text-base">
               <div className="blink">
                 <span className="mr-2 text-pink-400">const</span>
@@ -234,8 +223,8 @@ function HeroSection({ profile }) {
               <div><span className="text-gray-400">{`};`}</span></div>
             </code>
           </div>
+        </GlowCard>
         </div>
-      </div>
     </section>
   );
 };

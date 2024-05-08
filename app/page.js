@@ -25,9 +25,19 @@ async function getGitProjects() {
   return await res.json();
 };
 
+async function getStackOverflowProfile() {
+  const res = await fetch(`https://api.stackexchange.com/2.3/users/${userData.stackOverflowUser}?order=desc&sort=reputation&site=stackoverflow`)
+  if (!res.ok) {
+    throw new Error('Failed to fetch data')
+  }
+
+  return await res.json(); 
+};
+
 export default async function Home() {
   const profile = await getGitProfile();
   const projects = await getGitProjects();
+  const stackOverflowProfile = await getStackOverflowProfile();
 
   return (
     <>
@@ -42,13 +52,4 @@ export default async function Home() {
       <Contributions />
     </>
   )
-};
-
-export async function generateMetadata({ params, searchParams }, parent) {
-  const profile = await getGitProfile();
-
-  return {
-    title: `GitHub Profile of ${profile.name}`,
-    description: profile.description,
-  };
 };
